@@ -1,16 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HACKATHON PROJECT </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bankebun — Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="1st project.css">
 </head>
 <body>
-    <h1>Projek Projekkkkk, apa itu projekkk projekkkk ?
+  <div class="bg-tree" aria-hidden="true"></div>
+  <div class="container">
+    <div class="brand">
+      
+      <img class="art" src="/images/Logo_Bankebun-removebg-preview.png" alt="Bankebun branding">
+    </div>
 
-        <h2> Kontol, ga ga ga kontol </h2>
+    <div class="login-wrap">
+      <form class="card" onsubmit="event.preventDefault(); alert('Login submitted (template)');">
+        <h1>Log in to Bankebun</h1>
+        <p class="subtitle">Masukkan username dan password Anda</p>
 
-    
-    </h1>   
+        <label class="field">
+          <input type="text" placeholder="Username" required>
+        </label>
+
+        <label class="field">
+          <input type="password" placeholder="Password" required>
+        </label>
+
+        <button class="btn">Log In</button>
+
+        <div class="links">
+          <a href="#">Forgot password?</a>
+          <a href="#">Sign up to Bankebun</a>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
