@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankebun Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo-section" id="logoToggle">
+            <img src="images/Logo_Bankebun-removebg-preview.png" alt="logo">
+        </div>
+
+        <nav class="menu">
+            <a class="active"><i class="fa fa-home"></i> Dashboard</a>
+            <a><i class="fa fa-calendar"></i> Calendar</a>
+            <a><i class="fa fa-seedling"></i> My Goals</a>
+            <a><i class="fa fa-gear"></i> Settings</a>
+        </nav>
+
+        <a class="logout"><i class="fa fa-right-from-bracket"></i> Log Out</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <h1>Halo, Petani Cuan! 👋</h1>
+                <p>Monday, 24 November 2025</p>
+            </div>
+
+            <div class="icons">
+                <button id="addDataBtn" class="add-btn"> + Tambah Data</button>
+                <i class="fa fa-bell"></i>
+                <i class="fa fa-user"></i>
+            </div>
+        </header>
+
+        <!-- Stats Cards -->
+        <section class="stats">
+            <div class="card green">
+                <p>Total Balance</p>
+                <h2>Rp 0</h2>
+            </div>
+
+            <div class="card green-light">
+                <p>Income This Month</p>
+                <h2>Rp 0</h2>
+            </div>
+
+            <div class="card red">
+                <p>Expenses This Month</p>
+                <h2>Rp 0</h2>
+            </div>
+        </section>
+
+        <!-- Grid -->
+        <section class="dashboard-grid">
+
+            <!-- Cash Flow Overview -->
+            <div class="cashflow box">
+                <h3><i class="fa fa-chart-line"></i> Cash Flow Overview</h3>
+                <div class="cash-header">
+                    <h1>0K</h1>
+                    <span class="green-text"><i class="fa fa-arrow-up"></i> 00.00%</span>
+                </div>
+
+                <!-- Static Chart -->
+                <div class="chart">
+                    <div class="y-labels">
+                        <span>Rp 2M</span>
+                        <span>Rp 1.5M</span>
+                        <span>Rp 1.3M</span>
+                        <span>Rp 1.1M</span>
+                        <span>Rp 900K</span>
+                        <span>Rp 700K</span>
+                        <span>Rp 500K</span>
+                        <span>Rp 300K</span>
+                        <span>Rp 100K</span>
+                    </div>
+
+                    <div class="chart-lines">
+                        <div class="points">
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                            <span></span><span></span>
+                        </div>
+
+                        <div class="months">
+                            <span>JAN</span><span>FEB</span><span>MAR</span>
+                            <span>APR</span><span>MAY</span><span>JUN</span>
+                            <span>JUL</span><span>AUG</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My Goals -->
+            <div class="mygoals box">
+                <h3>My Goals</h3>
+
+                <div class="goal">
+                    <p>Laptop Baru <span>80%</span></p>
+                    <div class="progress">
+                        <div style="width: 80%;"></div>
+                    </div>
+                    <small>Rp 12.000.000 / Rp 15.000.000</small>
+                </div>
+
+                <div class="goal">
+                    <p>Bayar UKT <span>50%</span></p>
+                    <div class="progress">
+                        <div style="width: 50%;"></div>
+                    </div>
+                    <small>Rp 150.000.000 / Rp 300.000.000</small>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent box">
+                <h3>Recent Activity</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Expenses</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td><i class="fa fa-coins"></i> Gaji</td><td>Rp 5.000.000</td></tr>
+                        <tr><td><i class="fa fa-house"></i> Bayar Kost</td><td>Rp 1.500.000</td></tr>
+                        <tr><td><i class="fa fa-bowl-food"></i> Makan</td><td>Rp 1.000.000</td></tr>
+                        <tr><td><i class="fa fa-mug-hot"></i> Ngopi</td><td>Rp 400.000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Budget Monitor -->
+            <div class="budget box">
+                <h3>Budget Monitor</h3>
+
+                <div class="donut">
+                    <div class="slice slice1"></div>
+                    <div class="slice slice2"></div>
+                    <div class="slice slice3"></div>
+                    <div class="slice slice4"></div>
+                </div>
+
+                <div class="legend">
+                    <p style="color:#5DADE2;">Biaya Kost - 30%</p>
+                    <p style="color:#F5B041;">Tabungan - 20%</p>
+                    <p style="color:#EC7063;">Makan - 20%</p>
+                    <p style="color:#82E0AA;">Lain lain - 30%</p>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="modal" id="modalInput">
+        <div class="modal-content">
+            <h2>Tambah Data</h2>
+
+            <label>Jenis</label>
+            <select id="typeInput">
+                <option value="income">Pemasukkan</option>
+                <option value="expense">Pengeluaran</option>
+            </select>
+
+            <label>Nominal (Rp)</label>
+            <input type="number" id="amountInput" placeholder="Masukan Nominal">
+
+            <label>Keterangan</label>
+            <input type="text" id="descInput" placeholder="Keterangan">
+
+            <button id="saveBtn">Simpan</button>
+            <button id="closeModal">Batal</button>
+        </div>
+    </div>
+
+    </main>
+    <script src="Dashboard.js"></script>
+</body>
+</html>
